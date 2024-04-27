@@ -1,6 +1,9 @@
 package net.frocha.modcourse;
 
 import com.mojang.logging.LogUtils;
+import net.frocha.modcourse.block.ModBlocks;
+import net.frocha.modcourse.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -24,6 +27,9 @@ public class ModCourse {
     public ModCourse() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -40,7 +46,15 @@ public class ModCourse {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.EXAMPLE_ITEM);
+            event.accept(ModItems.EXAMPLE_ITEM_RAW);
+        }
 
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.EXAMPLE_BLOCK);
+            event.accept(ModBlocks.RAW_EXAMPLE_BLOCK);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
