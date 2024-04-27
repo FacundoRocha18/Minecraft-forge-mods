@@ -2,6 +2,7 @@ package net.frocha.modcourse;
 
 import com.mojang.logging.LogUtils;
 import net.frocha.modcourse.block.ModBlocks;
+import net.frocha.modcourse.item.ModCreativeModeTabs;
 import net.frocha.modcourse.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,6 +28,7 @@ public class ModCourse {
     public ModCourse() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
@@ -47,13 +49,16 @@ public class ModCourse {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.EXAMPLE_ITEM);
-            event.accept(ModItems.EXAMPLE_ITEM_RAW);
+            event.accept(ModItems.DURASTEEL);
+            event.accept(ModItems.RAW_DURASTEEL);
         }
 
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.EXAMPLE_BLOCK);
-            event.accept(ModBlocks.RAW_EXAMPLE_BLOCK);
+            event.accept(ModBlocks.DURASTEEL_BLOCK);
+            event.accept(ModBlocks.DURASTEEL_ORE);
+            event.accept(ModBlocks.DEEPSLATE_DURASTEEL_ORE);
+            event.accept(ModBlocks.END_STONE_DURASTEEL_ORE);
+            event.accept(ModBlocks.NETHER_DURASTEEL_ORE);
         }
     }
 

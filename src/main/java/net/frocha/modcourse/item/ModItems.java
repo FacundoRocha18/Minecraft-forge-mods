@@ -1,6 +1,7 @@
 package net.frocha.modcourse.item;
 
 import net.frocha.modcourse.ModCourse;
+import net.frocha.modcourse.item.custom.MetalDetectorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -11,14 +12,19 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, ModCourse.MOD_ID);
 
-    public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register(
-            "example_item",
+    public static final RegistryObject<Item> DURASTEEL = ITEMS.register(
+            "durasteel",
             () -> new Item(new Item.Properties())
     );
 
-    public static final RegistryObject<Item> EXAMPLE_ITEM_RAW = ITEMS.register(
-            "example_item_raw",
+    public static final RegistryObject<Item> RAW_DURASTEEL = ITEMS.register(
+            "raw_durasteel",
             () -> new Item(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register(
+            "metal_detector",
+            () -> new MetalDetectorItem(new Item.Properties().durability(512))
     );
 
     public static void register(IEventBus eventBus) {

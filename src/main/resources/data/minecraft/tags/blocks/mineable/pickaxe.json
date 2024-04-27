@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "modcourse:durasteel_ore",
+    "modcourse:deepslate_durasteel_ore",
+    "modcourse:end_stone_durasteel_ore",
+    "modcourse:nether_durasteel_ore",
+    "modcourse:durasteel_block"
+  ]
+}

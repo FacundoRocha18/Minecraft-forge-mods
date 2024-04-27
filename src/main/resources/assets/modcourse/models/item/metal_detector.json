@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "modcourse:item/example_item_raw"
+    "layer0": "modcourse:item/metal_detector"
   }
 }
