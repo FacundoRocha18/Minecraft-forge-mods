@@ -1,6 +1,7 @@
 package net.frocha.modcourse.block;
 
 import net.frocha.modcourse.ModCourse;
+import net.frocha.modcourse.block.custom.SoundBlock;
 import net.frocha.modcourse.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -61,6 +62,11 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops(),
                     UniformInt.of(5, 8)
             )
+    );
+
+    public static final RegistryObject<Block> SOUND_BLOCK = registerBlock(
+            "sound_block",
+            () -> new SoundBlock(BlockBehaviour.Properties.copy((Blocks.IRON_BLOCK)))
     );
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

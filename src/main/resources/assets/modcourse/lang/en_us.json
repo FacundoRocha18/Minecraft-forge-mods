@@ -1,5 +1,9 @@
 {
   "creativetab.materials": "Materials",
+  "creativetab.functional": "Functional",
+  "creativetab.foods": "Foods",
+  "creativetab.fuels": "Fuels",
+
   "item.modcourse.durasteel": "Durasteel",
   "item.modcourse.raw_durasteel": "Raw Durasteel",
   "item.modcourse.metal_detector":  "Metal detector",
@@ -11,6 +15,11 @@
   "block.modcourse.end_stone_durasteel_ore":  "End stone Durasteel ore",
   "block.modcourse.nether_durasteel_ore":  "Nether Durasteel ore",
 
+  "block.modcourse.sound_block":  "Sound block",
+
+  "item.modcourse.kohlrabi":  "Kohlrabi",
+
+  "item.modcourse.peat_brick":  "Peat brick",
 
   "item.modcourse.metal_detector.no_valuables": "No valuables found."
 }
